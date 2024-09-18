@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://x3iwqfg82wfj"]
+
+[ext_resource type="Script" path="res://scripts/rock.gd" id="1_17ky5"]
+[ext_resource type="Texture2D" uid="uid://c17ejpdfi6xfk" path="res://images/rockGrassDown.png" id="1_mapkb"]
+
+[node name="Area2D" type="Area2D"]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_17ky5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mapkb")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-54, -118, 51, -118, 13, 126)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

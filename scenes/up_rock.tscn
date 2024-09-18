@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bspl1gghdtvfl"]
+
+[ext_resource type="Script" path="res://scripts/rock.gd" id="1_y4xpl"]
+[ext_resource type="Texture2D" uid="uid://dym2ou60h5lge" path="res://images/rockGrass.png" id="2_5lyk8"]
+
+[node name="up_rock" type="Area2D"]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_y4xpl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_5lyk8")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-50, 116, 11.3333, -127.333, 53.3333, 114)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
